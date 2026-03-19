@@ -1,20 +1,18 @@
 BATTERY CELL GROUOINF ENGINNE
+
 This repository contains a high-performance Python engine designed to group battery cells into packs based on their electrochemical profiles. Originally developed for CL05 and CL76 workflows, the tool ensures pack longevity by minimizing variance in capacity and internal resistance (IR).
 
 KEY FEATURES
+
 The engine leverages modern Python patterns to ensure reliability and maintainability:
-
-Object-Oriented Architecture: Logic is encapsulated within a BatteryCellGrouper class for better state management.
-
-Data Validation: Uses Pydantic to enforce strict typing and validation on user inputs and configuration.
-
-Outlier Management: Iteratively identifies and removes (or groups) upper and lower capacity outliers to prevent "weak link" pack configurations.
-
-Advanced Clustering: Employs Gaussian Mixture Models (GMM) from scikit-learn to identify optimal cluster centers for cell distribution.
-
-Safety & Logging: Features custom Decorators for performance tracking and Context Managers for resilient file I/O operations.
+- Object-Oriented Architecture: Logic is encapsulated within a BatteryCellGrouper class for better state management.
+- Data Validation: Uses Pydantic to enforce strict typing and validation on user inputs and configuration.
+- Outlier Management: Iteratively identifies and removes (or groups) upper and lower capacity outliers to prevent "weak link" pack configurations.
+- Advanced Clustering: Employs Gaussian Mixture Models (GMM) from scikit-learn to identify optimal cluster centers for cell distribution.
+- Safety & Logging: Features custom Decorators for performance tracking and Context Managers for resilient file I/O operations.
 
 CONFIGURATION
+
 Parameter	Description
 - Capacity Range	The allowable +/- % variance for cell capacity within a single pack.
 - IR Range	The allowable +/- % variance for internal resistance.
