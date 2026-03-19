@@ -1,4 +1,4 @@
-BATTERY CELL GROUOINF ENGINNE
+BATTERY CELL GROUPING ENGINNE
 
 This repository contains a high-performance Python engine designed to group battery cells into packs based on their electrochemical profiles. Originally developed for CL05 and CL76 workflows, the tool ensures pack longevity by minimizing variance in capacity and internal resistance (IR).
 
