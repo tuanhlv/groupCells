@@ -236,14 +236,13 @@ class QuickBaseClient:
 
     def __init__(self, updates, url: str, database: str, user_token: str):
         self.url = url
-        self.database = database
+        self.table_id = database
         self.headers = {
             'QB-Realm-Hostname': self.url.replace('https://', '').split('/')[0],
             'Authorization': f'QB-USER-TOKEN {user_token}',
             'Content-Type': 'application/json'
         }
         self.api_base = "https://api.quickbase.com/v1/records"
-        self.table_id = "bqg4mcgag"
         self.updates = updates
 
     def push_updates(self, updates: list[QBUpdateRecord]):
