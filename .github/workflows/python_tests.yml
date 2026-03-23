@@ -1,0 +1,39 @@
+name: Battery Grouper CI
+
+# 1. When should this pipeline run?
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test:
+    # 2. What kind of server should it run on?
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step A: Download the code into the runner
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    # Step B: Install Python
+    - name: Set up Python 3.12
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.12"
+
+    # Step C: Install the required packages
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pandas scikit-learn pydantic requests pytest
+
+    # Step D: Execute the tests!
+    - name: Run Pytest
+      run: |
+        # -m: tell Python to look in the current folder first before starting the test engine.
+        python -m pytest tests/ -v
+      env:
+        # tell the Linux server that current directory (represented by the dot) contains my code. Look here for imports!
+        PYTHONPATH: .
