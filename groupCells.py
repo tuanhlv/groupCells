@@ -350,9 +350,9 @@ if __name__ == "__main__":
             qb_records = [QBUpdateRecord(cell_id=row[0], pack_id=row[1]) for row in raw_updates]
             QB = QuickBaseClient(
                 qb_records,
-                "https://ampriusinc.quickbase.com/v1/records",
-                "bqg4mcgag",
-                "bytuu3_wfx_53f6zibdnpvd5bavwjd26avh8"  # dbrobot user token
+                "https://company.quickbase.com/v1/records",
+                "table_id",
+                "user_token"  # dbrobot user token
             )
             QB.run()
 
