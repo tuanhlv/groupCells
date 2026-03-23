@@ -248,7 +248,6 @@ class BatteryCellGrouper:
         if self.df.empty:
             print("[ERROR] No data loaded. Exiting.")
             return
-        self.normalize()
         self.c_range = self.get_user_input('Input capacity range, +/- %: ', float)
         self.ir_range = self.get_user_input('Input IR range, +/- %: ', float)
         self.process_capacity_outliers(self.c_range, check_upper=True)
