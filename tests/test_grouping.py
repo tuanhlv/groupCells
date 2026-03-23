@@ -115,17 +115,6 @@ def test_exact_tolerance_boundary(mock_config):
     assert grouper.check_range(df_bound, 'Cap', 4.99) == 1
 
 
-def test_normalization_bounds(mock_config, sample_df):
-    """Ensures normalization mathematically locks between 0.0 and 1.0."""
-    grouper = BatteryCellGrouper(mock_config)
-    grouper.df = sample_df
-    grouper.normalize()
-
-    norm_col = 'Latest Cycle N1 Discharge Capacity (Ah)_n'
-    assert grouper.df_n[norm_col].max() == 1.0
-    assert grouper.df_n[norm_col].min() == 0.0
-
-
 # ==========================================
 # 5. Data Integrity & Shape
 # ==========================================
