@@ -32,8 +32,8 @@ jobs:
     # Step D: Execute the tests!
     - name: Run Pytest
       run: |
-      # -m: tell Python to look in the current folder first before starting the test engine.
+        # -m: tell Python to look in the current folder first before starting the test engine.
         python -m pytest tests/ -v
       env:
-      # tell the Linux server that current directory (represented by the dot) contains my code. Look here for imports!
+        # tell the Linux server that current directory (represented by the dot) contains my code. Look here for imports!
         PYTHONPATH: .
