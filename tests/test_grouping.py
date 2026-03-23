@@ -6,7 +6,7 @@ import requests
 
 # Import the classes from your main script
 # (assuming your file is named groupCells_CKM.py)
-from groupCells_CKM import (
+from groupCells import (
     BatteryCellGrouper,
     PackValidator,
     GroupingConfig,
