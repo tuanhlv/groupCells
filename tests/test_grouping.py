@@ -4,8 +4,7 @@ from pydantic import ValidationError
 from unittest.mock import MagicMock, patch
 import requests
 
-# Import the classes from your main script
-# (assuming your file is named groupCells_CKM.py)
+# Import the classes the main script
 from groupCells import (
     BatteryCellGrouper,
     PackValidator,
